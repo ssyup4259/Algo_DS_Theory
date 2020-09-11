@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class QuickSort {
 
 	static int partition(int[] arr, int left, int right) {
-		//피봇을 가운데로 지정
-		
+		// 피봇을 가운데로 지정
+
 		int pivot = arr[(left + right) / 2];
 		while (left <= right) {
 			// 피봇 보다 큰 원소 찾기
