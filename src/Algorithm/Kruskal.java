@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Kruskal {
 	static int n, m, p[];
 	static PriorityQueue<Info> pq = new PriorityQueue<>();
-
+	
+	// 우선순위큐에 간선이 짧은 기준으로 넣기 위해
 	static class Info implements Comparable<Info> {
 		int st, en, w;
 
