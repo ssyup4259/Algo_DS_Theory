@@ -36,5 +36,7 @@
 
   - UnionFind(유니온 파인드)
 
+    [개념, 설명 보러가기](https://blog.naver.com/11tjdnfeo/222119338375)
+
 - Data Structure
 
