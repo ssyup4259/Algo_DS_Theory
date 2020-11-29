@@ -5,7 +5,7 @@ public class Queue_Circular {
 	static final int Q_EMPTY = 0;
 	static final int Q_FULL = MAXQ;
 
-	static int queue[] = new int[MAXQ + 1];
+	static int queue[] = new int[MAXQ];
 	static int wr = 0;
 	static int rd = 0;
 
@@ -28,7 +28,8 @@ public class Queue_Circular {
 		if (rd == wr) {
 			return -1;
 		}
-		int res = queue[rd++];
+		int res = queue[rd];
+		queue[rd++] = 0;
 		rd %= MAXQ;
 		return res;
 	}

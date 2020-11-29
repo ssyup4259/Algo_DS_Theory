@@ -5,7 +5,7 @@ public class Queue_Linear {
 	static final int Q_EMPTY = 0;
 	static final int Q_FULL = MAXQ;
 
-	static int queue[] = new int[MAXQ + 1];
+	static int queue[] = new int[MAXQ];
 	static int wr = 0;
 	static int rd = 0;
 
@@ -18,7 +18,7 @@ public class Queue_Linear {
 			if (rd == Q_EMPTY) {
 				return -1;
 			}
-			
+
 			// rd 포인터를 가장 앞으로 땡겨오고 그만큼 데이터과 wr포인터를 땡겨온다
 			// 비어진 앞공간을 채우는 것이다.
 			for (int i = 0; i < (wr - rd); i++) {
@@ -35,29 +35,30 @@ public class Queue_Linear {
 	// 큐가 비어있따면 -1, 성공하면 그 값을 리턴
 	static int pop() {
 		// 큐가 비어 있는 상태
-		if(rd==wr) {
+		if (rd == wr) {
 			return -1;
 		}
-		int res = queue[rd++];
+		int res = queue[rd];
+		queue[rd++] = 0;
 		return res;
 	}
 
 	public static void main(String[] args) {
-		int arr[] = {-1,2,3,2,5,4,9};
-		
-		for(int i = 0 ; i< arr.length;i++) {
+		int arr[] = { -1, 2, 3, 2, 5, 4, 9 };
+
+		for (int i = 0; i < arr.length; i++) {
 			push(arr[i]);
-			for(int j = 0 ; j<queue.length;j++) {
+			for (int j = 0; j < queue.length; j++) {
 				System.out.print(queue[j] + " ");
 			}
 			System.out.println();
 		}
-		
-		for(int i = 0 ; i< arr.length;i++) {
+
+		for (int i = 0; i < arr.length; i++) {
 			System.out.println("큐에서 뺀 값 : " + pop());
-			System.out.println("wr : " + wr + " rd  : " +rd);
+			System.out.println("wr : " + wr + " rd  : " + rd);
 		}
-		
+
 	}
 
 }
